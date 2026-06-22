@@ -37,4 +37,15 @@ public class BookController {
     public ResponseEntity<List<BookResponseDto>> findByBookName(@RequestParam String bookName) {
         return ResponseEntity.ok(bookService.findByBookName(bookName));
     }
+    @Operation(summary = "대출 도서 조회", description = "현재 대출된 모든 도서를 조회합니다.")
+    @GetMapping("/loaned")
+    public ResponseEntity<List<BookResponseDto>> findLoanedBooks() {
+        return ResponseEntity.ok(bookService.findLoanedBooks());
+    }
+
+    @Operation(summary = "반납 도서 조회", description = "반납된 모든 도서를 조회합니다.")
+    @GetMapping("/returned")
+    public ResponseEntity<List<BookResponseDto>> findReturnedBooks() {
+        return ResponseEntity.ok(bookService.findReturnedBooks());
+    }
 }

@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_2026__6__22__오후_3_20_[Changes]" date="1782109220674" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2026__6__22__오후_3_20_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2026. 6. 22. 오후 3:20 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/9.5.1/checksums/md5-checksums.bin" />
+    <option name="AFTER_PATH" value=".gradle/9.5.1/checksums/md5-checksums.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2026__6__22__오후_3_20_[Changes]/md5-checksums.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/9.5.1/checksums/sha1-checksums.bin" />
+    <option name="AFTER_PATH" value=".gradle/9.5.1/checksums/sha1-checksums.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2026__6__22__오후_3_20_[Changes]/sha1-checksums.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value=".gradle/9.5.1/checksums/checksums.lock" />
+    <option name="AFTER_PATH" value=".gradle/9.5.1/checksums/checksums.lock" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2026__6__22__오후_3_20_[Changes]/checksums.lock" />
+  </binary>
+</changelist>

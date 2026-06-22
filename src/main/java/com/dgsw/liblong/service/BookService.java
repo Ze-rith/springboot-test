@@ -38,4 +38,17 @@ public class BookService {
                 .map(BookResponseDto::new)
                 .toList();
     }
+    //대출 조회
+    public List<BookResponseDto> findLoanedBooks() {
+        return bookRepository.findAllByBorrowedTrue().stream()
+                .map(BookResponseDto::new)
+                .toList();
+    }
+
+    //반납 조회
+    public List<BookResponseDto> findReturnedBooks() {
+        return bookRepository.findAllByBorrowedFalse().stream()
+                .map(BookResponseDto::new)
+                .toList();
+    }
 }

@@ -1,15 +1,13 @@
 package com.dgsw.liblong.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -24,5 +22,4 @@ public class LoansEntity {
     private String borrower;
 
     private LocalDateTime loanDate;
-
 }

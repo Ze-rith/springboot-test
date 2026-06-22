@@ -32,9 +32,9 @@ public class BookController {
         return ResponseEntity.ok(bookService.findAll());
     }
 
-    @Operation(summary = "도서 단건 조회", description = "ID로 특정 도서를 조회합니다.")
-    @GetMapping("/{id}")
-    public ResponseEntity<BookResponseDto> findById(@PathVariable Long id) {
-        return ResponseEntity.ok(bookService.findById(id));
+    @Operation(summary = "도서 이름 조회", description = "책 이름으로 도서를 조회합니다. 동일한 이름의 책이 여러 권이면 전부 반환합니다.")
+    @GetMapping("/search")
+    public ResponseEntity<List<BookResponseDto>> findByBookName(@RequestParam String bookName) {
+        return ResponseEntity.ok(bookService.findByBookName(bookName));
     }
 }

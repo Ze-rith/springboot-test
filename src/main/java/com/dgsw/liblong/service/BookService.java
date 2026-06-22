@@ -33,8 +33,9 @@ public class BookService {
                 .toList();
     }
 
-    public BookResponseDto findById(Long id) {
-        return new BookResponseDto(bookRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 도서입니다. id=" + id)));
+    public List<BookResponseDto> findByBookName(String bookName) {
+        return bookRepository.findAllByBookName(bookName).stream()
+                .map(BookResponseDto::new)
+                .toList();
     }
 }

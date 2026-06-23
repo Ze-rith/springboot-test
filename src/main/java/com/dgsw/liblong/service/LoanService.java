@@ -2,34 +2,30 @@ package com.dgsw.liblong.service;
 
 import com.dgsw.liblong.dto.LoanRequestDto;
 import com.dgsw.liblong.dto.LoanResponseDto;
-import com.dgsw.liblong.entity.LoansEntity;
-import com.dgsw.liblong.repository.LoanRepository;
+import com.dgsw.liblong.entity.Book;
+import com.dgsw.liblong.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
 public class LoanService {
 
-    private final LoanRepository loanRepository;
+    private final BookRepository bookRepository;
 
+    @Transactional
     public LoanResponseDto loanBook(LoanRequestDto dto) {
+        Book book = bookRepository.findById(dto.getBookId())
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 도서입니다."));
 
-        LoansEntity loan = LoansEntity.builder()
-                .bookId(dto.getBookId())
-                .borrower(dto.getBorrower())
-                .loanDate(LocalDateTime.now())
-                .build();
-
-        LoansEntity savedLoan = loanRepository.save(loan);
+        book.loanTo(dto.getBorrower());
 
         return LoanResponseDto.builder()
-                .id(savedLoan.getId())
-                .bookId(savedLoan.getBookId())
-                .borrower(savedLoan.getBorrower())
-                .loanDate(savedLoan.getLoanDate())
+                .id(book.getId())
+                .bookId(book.getId())
+                .borrower(book.getBorrower())
+                .loanDate(book.getLoanDate())
                 .build();
     }
 }

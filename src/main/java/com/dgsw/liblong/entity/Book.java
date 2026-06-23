@@ -3,6 +3,8 @@ package com.dgsw.liblong.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "books")
 @Getter
@@ -23,4 +25,20 @@ public class Book {
 
     @Column(nullable = false)
     private boolean borrowed;
+
+    private String borrower;
+
+    private LocalDateTime loanDate;
+
+    public void loanTo(String borrower) {
+        this.borrowed = true;
+        this.borrower = borrower;
+        this.loanDate = LocalDateTime.now();
+    }
+
+    public void returnBook() {
+        this.borrowed = false;
+        this.borrower = null;
+        this.loanDate = null;
+    }
 }

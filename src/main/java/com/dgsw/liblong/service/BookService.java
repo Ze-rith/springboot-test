@@ -51,4 +51,11 @@ public class BookService {
                 .map(BookResponseDto::new)
                 .toList();
     }
+
+    @Transactional
+    public void deleteBook(Long id) {
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 도서입니다."));
+        bookRepository.delete(book);
+    }
 }

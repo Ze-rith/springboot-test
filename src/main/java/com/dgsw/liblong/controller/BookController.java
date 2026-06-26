@@ -48,4 +48,11 @@ public class BookController {
     public ResponseEntity<List<BookResponseDto>> findReturnedBooks() {
         return ResponseEntity.ok(bookService.findReturnedBooks());
     }
+
+    @Operation(summary = "도서 삭제", description = "ID로 특정 도서를 삭제합니다.")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteBook(@PathVariable Long id) {
+        bookService.deleteBook(id);
+        return ResponseEntity.noContent().build();
+    }
 }
